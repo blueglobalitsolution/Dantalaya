@@ -22,7 +22,7 @@
     // Ensure logo image is present inside drawer identity panel
     const navLogo = document.querySelector('.jkit-nav-identity-panel .jkit-nav-logo');
     if (navLogo && (!navLogo.querySelector('img') || navLogo.innerHTML.trim() === '')) {
-      navLogo.innerHTML = '<img src="wp-content/uploads/2024/07/Dantalaya-01-e1720875225881.png" alt="Dantalaya Cosmetic Dental Clinic" style="max-height: 38px; width: auto; display: block;">';
+      navLogo.innerHTML = '<img src="/wp-content/uploads/2021/04/final-logo-300x289.png" alt="Dantalaya Cosmetic Dental Clinic" style="max-height: 38px; width: auto; display: block;">';
     }
 
     // Ensure close button has a crisp SVG 'X' icon if font-awesome is missing
@@ -30,19 +30,7 @@
       closeBtn.innerHTML = '<svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:none;stroke:#1e293b;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
     }
 
-    // Ensure CTA action buttons exist inside the drawer
-    if (menuWrapper && !menuWrapper.querySelector('.jkit-drawer-actions')) {
-      const drawerActions = document.createElement('div');
-      drawerActions.className = 'jkit-drawer-actions';
-      drawerActions.innerHTML = `
-        <a href="contact-us.html" class="drawer-btn-book">Book Appointment</a>
-        <a href="tel:9824252667" class="drawer-btn-call">
-          <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor;margin-right:8px;vertical-align:middle;flex-shrink:0;"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.21 2.2z"/></svg>
-          <span>Call: +91 98242 52667</span>
-        </a>
-      `;
-      menuWrapper.appendChild(drawerActions);
-    }
+
 
     function openMenu() {
       if (menuWrapper) menuWrapper.classList.add('active');
@@ -124,6 +112,7 @@
           if (window.innerWidth <= 1024) {
             e.preventDefault();
             e.stopPropagation();
+            if (e.stopImmediatePropagation) e.stopImmediatePropagation();
             const isOpen = subMenu.classList.contains('dropdown-open');
             if (!isOpen) {
               subMenu.classList.add('dropdown-open');
@@ -133,7 +122,7 @@
               parentItem.classList.remove('submenu-expanded');
             }
           }
-        });
+        }, true);
       }
     });
 
@@ -169,34 +158,13 @@
     });
   }
 
-  function injectMobileQuickBar() {
-    if (document.querySelector('.mobile-quick-bar')) return;
-
-    const bar = document.createElement('div');
-    bar.className = 'mobile-quick-bar';
-    bar.setAttribute('aria-label', 'Mobile Quick Contact');
-    bar.innerHTML = `
-      <a href="tel:9824252667" class="btn-call" aria-label="Call Clinic">
-        <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.21 2.2z"/></svg>
-        <span>Call Now</span>
-      </a>
-      <a href="contact-us.html" class="btn-book" aria-label="Book Appointment">
-        <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
-        <span>Appointment</span>
-      </a>
-    `;
-    document.body.appendChild(bar);
-  }
-
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () {
       initResponsiveNav();
       initFooterAccordion();
-      injectMobileQuickBar();
     });
   } else {
     initResponsiveNav();
     initFooterAccordion();
-    injectMobileQuickBar();
   }
 })();

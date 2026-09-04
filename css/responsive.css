@@ -789,52 +789,9 @@
    and original 1140px boxed layout and margins remain intact
    ========================================================================== */
 @media (min-width: 1025px) {
-  .elementor-element.elementor-element-a3af69b .jeg-elementor-kit.jkit-nav-menu .jkit-hamburger-menu,
-  .elementor-224 .jeg-elementor-kit.jkit-nav-menu .jkit-hamburger-menu,
-  .jeg-elementor-kit.jkit-nav-menu .jkit-hamburger-menu {
-    display: none !important;
-  }
-
-  .elementor-224 .elementor-element.elementor-element-a3af69b .jeg-elementor-kit.jkit-nav-menu .jkit-menu-wrapper,
-  .elementor-element.elementor-element-a3af69b .jeg-elementor-kit.jkit-nav-menu .jkit-menu-wrapper,
-  .jeg-elementor-kit.jkit-nav-menu .jkit-menu-wrapper {
-    position: static !important;
-    right: auto !important;
-    left: auto !important;
-    width: auto !important;
-    max-width: none !important;
-    height: auto !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    display: flex !important;
-    flex-direction: row !important;
-    visibility: visible !important;
-    transform: none !important;
-    padding: 0 !important;
-    overflow: visible !important;
-    transition: none !important;
-  }
-
   .jkit-menu-wrapper .jkit-nav-identity-panel,
   .jkit-menu-wrapper .jkit-drawer-actions,
   .jkit-overlay {
-    display: none !important;
-  }
-
-  .jkit-menu-wrapper .jkit-menu-container {
-    width: auto !important;
-    height: auto !important;
-    overflow: visible !important;
-  }
-
-  .jkit-menu-wrapper .jkit-menu {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-
-  .jkit-menu-wrapper .menu-item-has-children > a::after {
     display: none !important;
   }
 }
