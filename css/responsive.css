@@ -9,115 +9,13 @@
   visibility: visible !important;
 }
 
-/* --------------------------------------------------------------------------
-   2. TABLET ADAPTATIONS (768px - 1024px)
-   -------------------------------------------------------------------------- */
-@media (min-width: 768px) and (max-width: 1024px) {
-  /* Header adjustments for Tablet */
-  .elementor-224 .elementor-element.elementor-element-7ecc71f2 {
-    padding: 10px 20px !important;
-  }
-
-  .elementor-224 .elementor-element.elementor-element-7ecc71f2 > .elementor-container {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    min-height: 54px !important;
-  }
-
-  .elementor-224 .elementor-element.elementor-element-5d76a6c2 {
-    width: 32% !important;
-    display: flex !important;
-    align-items: center !important;
-  }
-
-  .elementor-224 .elementor-element.elementor-element-7587c034 {
-    width: 68% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
-  }
-
-  .elementor-224 .elementor-element.elementor-element-1d2069b6 img {
-    max-height: 48px;
-    width: auto;
-    object-fit: contain;
-  }
-
-  .elementor-224 .jkit-menu-wrapper .jkit-menu > li > a {
-    font-size: 15px !important;
-    padding: 0 12px !important;
-  }
-
-  /* Two-column layout for treatment grids */
-  .elementor-section .elementor-container > .elementor-col-33,
-  .elementor-section .elementor-container > .elementor-column.elementor-col-33 {
-    width: 50% !important;
-    margin-bottom: 24px;
-  }
-
-  /* Inner treatment pages: Content (66%) and Sidebar (33%) */
-  .elementor-section .elementor-container > .elementor-col-66 {
-    width: 100% !important;
-    margin-bottom: 30px;
-  }
-
-  .elementor-section .elementor-container > .elementor-col-33:last-child {
-    width: 100% !important;
-  }
-
-  /* Footer 2x2 grid */
-  .elementor-230 .elementor-element.elementor-element-3764734d,
-  .elementor-230 .elementor-element.elementor-element-2a13670c {
-    width: 50% !important;
-    margin-bottom: 30px !important;
-  }
-
-  .elementor-230 .elementor-element.elementor-element-e40fd61 {
-    width: 50% !important;
-    margin-top: 0 !important;
-    margin-left: 0 !important;
-  }
-
-  .elementor-230 .elementor-element.elementor-element-190990db {
-    width: 50% !important;
-    margin-top: 0 !important;
-  }
-
-  /* SmartSlider 3 on Tablet */
-  .n2-ss-slider-3,
-  .n2-ss-slider-4,
-  .n2-ss-slide {
-    height: auto !important;
-    min-height: 460px !important;
-  }
-
-  .n-uc-104953c9ab0d6-inner > .n2-ss-layer-row-inner {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-  }
-
-  .n-uc-1fcdbdd9d52d2 {
-    width: 60% !important;
-  }
-
-  .n-uc-1c5b0d387b77d {
-    width: 40% !important;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   3. MOBILE ADAPTATIONS (<= 767px)
-   -------------------------------------------------------------------------- */
-@media (max-width: 767px) {
-  /* Prevent horizontal scroll on small screens */
-  body {
-    padding-bottom: 60px !important; /* Space for mobile floating action bar */
-  }
-
-  /* Header Section - Perfect vertical alignment & compact height */
+/* ==========================================================================
+   1. MOBILE & TABLET HEADER & NAVIGATION (<= 1024px)
+   Clean header with clinic logo, stylish hamburger button, and smooth
+   off-canvas slide-out navigation drawer with treatments accordion & CTA buttons
+   ========================================================================== */
+@media (max-width: 1024px) {
+  /* Header Section Container */
   header#masthead,
   .elementor-224 {
     width: 100% !important;
@@ -203,8 +101,16 @@
     min-height: 0 !important;
   }
 
+  /* Hide desktop columns on phone and tablet */
+  .elementor-224 .elementor-element.elementor-element-56c97d55,
+  .elementor-224 .elementor-element.elementor-element-268f3387 {
+    display: none !important;
+  }
+
   /* Hamburger Menu Button */
-  .elementor-224 .jeg-elementor-kit.jkit-nav-menu .jkit-hamburger-menu {
+  .elementor-element.elementor-element-a3af69b .jeg-elementor-kit.jkit-nav-menu .jkit-hamburger-menu,
+  .elementor-224 .jeg-elementor-kit.jkit-nav-menu .jkit-hamburger-menu,
+  .jeg-elementor-kit.jkit-nav-menu .jkit-hamburger-menu {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -225,106 +131,164 @@
     line-height: 1 !important;
   }
 
-  .elementor-224 .jeg-elementor-kit.jkit-nav-menu .jkit-hamburger-menu:active {
+  .jeg-elementor-kit.jkit-nav-menu .jkit-hamburger-menu:active {
     transform: scale(0.93) !important;
   }
 
-  .elementor-224 .jeg-elementor-kit.jkit-nav-menu .jkit-hamburger-menu i,
-  .elementor-224 .jeg-elementor-kit.jkit-nav-menu .jkit-hamburger-menu svg {
-    font-size: 20px !important;
-    width: 20px !important;
-    height: 20px !important;
+  .jeg-elementor-kit.jkit-nav-menu .jkit-hamburger-menu i,
+  .jeg-elementor-kit.jkit-nav-menu .jkit-hamburger-menu svg {
+    font-size: 22px !important;
+    width: 22px !important;
+    height: 22px !important;
     color: #ffffff !important;
     fill: #ffffff !important;
     margin: 0 !important;
     padding: 0 !important;
+    display: block !important;
   }
 
-  /* Hide desktop columns on mobile */
-  .elementor-224 .elementor-element.elementor-element-56c97d55,
-  .elementor-224 .elementor-element.elementor-element-268f3387 {
-    display: none !important;
-  }
-
-  .jeg-elementor-kit.jkit-nav-menu .jkit-hamburger-menu i {
-    font-size: 22px !important;
-    color: #ffffff !important;
-  }
-
-  .jeg-elementor-kit.jkit-nav-menu .jkit-hamburger-menu svg {
-    width: 22px !important;
-    height: 22px !important;
-    fill: #ffffff !important;
-  }
-
-  /* Mobile Slide-in Drawer */
+  /* Slide-in Mobile & Tablet Navigation Drawer */
+  .elementor-224 .elementor-element.elementor-element-a3af69b .jeg-elementor-kit.jkit-nav-menu .jkit-menu-wrapper,
+  .elementor-element.elementor-element-a3af69b .jeg-elementor-kit.jkit-nav-menu .jkit-menu-wrapper,
   .jeg-elementor-kit.jkit-nav-menu .jkit-menu-wrapper {
     position: fixed !important;
     top: 0 !important;
-    right: -105% !important;
+    right: -115% !important;
     left: auto !important;
     width: 85% !important;
-    max-width: 320px !important;
+    max-width: 360px !important;
     height: 100vh !important;
+    height: 100dvh !important;
     background: #ffffff !important;
-    box-shadow: -8px 0 25px rgba(0, 0, 0, 0.15) !important;
-    z-index: 10000 !important;
+    box-shadow: -10px 0 35px rgba(0, 0, 0, 0.22) !important;
+    z-index: 1000000 !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: flex-start !important;
     overflow-y: auto !important;
     overflow-x: hidden !important;
-    padding: 20px !important;
+    padding: 20px 20px 30px !important;
     transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    visibility: hidden;
+    transform: none !important;
+    border-radius: 0 !important;
+    box-sizing: border-box !important;
   }
 
+  /* Drawer Active State (When Opened) */
+  body.mobile-nav-open .elementor-224 .elementor-element.elementor-element-a3af69b .jeg-elementor-kit.jkit-nav-menu .jkit-menu-wrapper,
+  body.mobile-nav-open .jeg-elementor-kit.jkit-nav-menu .jkit-menu-wrapper,
+  .elementor-224 .elementor-element.elementor-element-a3af69b .jeg-elementor-kit.jkit-nav-menu .jkit-menu-wrapper.active,
+  .elementor-element.elementor-element-a3af69b .jeg-elementor-kit.jkit-nav-menu .jkit-menu-wrapper.active,
   .jeg-elementor-kit.jkit-nav-menu .jkit-menu-wrapper.active {
     right: 0 !important;
+    left: auto !important;
+    visibility: visible !important;
   }
 
   /* Backdrop Overlay */
   .jkit-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(11, 39, 66, 0.6);
-    backdrop-filter: blur(3px);
-    z-index: 9999;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    position: fixed !important;
+    inset: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(15, 23, 42, 0.65) !important;
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+    z-index: 999990 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease !important;
   }
 
+  body.mobile-nav-open .jkit-overlay,
   .jkit-overlay.active {
-    opacity: 1;
-    visibility: visible;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
   }
 
-  /* Drawer Top Identity / Close */
+  /* Drawer Top Identity Panel (Logo & Close Button) */
   .jkit-menu-wrapper .jkit-nav-identity-panel {
+    order: 1 !important;
     display: flex !important;
+    flex-direction: row !important;
     align-items: center !important;
     justify-content: space-between !important;
     width: 100% !important;
-    padding-bottom: 16px !important;
+    padding: 0 0 16px 0 !important;
     border-bottom: 1px solid #e2e8f0 !important;
-    margin-bottom: 16px !important;
+    margin: 0 0 16px 0 !important;
+    box-sizing: border-box !important;
   }
 
+  .jkit-menu-wrapper .jkit-nav-identity-panel .jkit-nav-site-title {
+    display: flex !important;
+    align-items: center !important;
+    flex: 1 !important;
+  }
+
+  .jkit-menu-wrapper .jkit-nav-identity-panel .jkit-nav-site-title .jkit-nav-logo {
+    display: block !important;
+    max-width: 220px !important;
+  }
+
+  .jkit-menu-wrapper .jkit-nav-identity-panel .jkit-nav-site-title .jkit-nav-logo img {
+    max-height: 38px !important;
+    width: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+
+  /* Close Button (Circular with Clean Cross) */
   .jkit-menu-wrapper .jkit-close-menu {
-    width: 38px !important;
-    height: 38px !important;
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     background: #f1f5f9 !important;
     color: #1e293b !important;
     border-radius: 50% !important;
-    border: none !important;
-    cursor: pointer;
+    border: 1px solid #cbd5e1 !important;
+    cursor: pointer !important;
     font-size: 18px !important;
+    transition: all 0.2s ease !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    line-height: 1 !important;
+    flex-shrink: 0 !important;
   }
 
-  /* Mobile Menu Items */
+  .jkit-menu-wrapper .jkit-close-menu:hover,
+  .jkit-menu-wrapper .jkit-close-menu:active {
+    background: #e2e8f0 !important;
+    color: #0f172a !important;
+    transform: scale(0.95);
+  }
+
+  .jkit-menu-wrapper .jkit-close-menu i {
+    font-size: 18px !important;
+    color: #1e293b !important;
+    line-height: 1 !important;
+  }
+
+  /* Drawer Menu Container & List */
+  .jkit-menu-wrapper .jkit-menu-container {
+    order: 2 !important;
+    width: 100% !important;
+    flex: 1 1 auto !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
   .jkit-menu-wrapper .jkit-menu {
     display: flex !important;
     flex-direction: column !important;
@@ -338,6 +302,7 @@
     width: 100% !important;
     border-bottom: 1px solid #f1f5f9 !important;
     display: block !important;
+    position: relative !important;
   }
 
   .jkit-menu-wrapper .jkit-menu > li > a {
@@ -349,52 +314,194 @@
     font-weight: 600 !important;
     color: #1e293b !important;
     text-decoration: none !important;
+    font-family: "Source Sans 3", sans-serif !important;
+    transition: color 0.15s ease !important;
   }
 
   .jkit-menu-wrapper .jkit-menu > li.current-menu-item > a {
     color: #1C57A7 !important;
   }
 
-  /* Sub-menu (Treatments) Accordion in Mobile */
+  /* Treatments Submenu Accordion */
+  .jkit-menu-wrapper .menu-item-has-children > a::after {
+    content: '▾';
+    font-size: 16px;
+    line-height: 1;
+    transition: transform 0.25s ease;
+    color: #64748b;
+    margin-left: 8px;
+  }
+
+  .jkit-menu-wrapper .menu-item-has-children.submenu-expanded > a::after {
+    transform: rotate(180deg);
+    color: #1C57A7;
+  }
+
   .jkit-menu-wrapper .jkit-menu li.menu-item-has-children .sub-menu {
     display: none !important;
-    padding: 8px 0 12px 14px !important;
+    padding: 6px 10px !important;
     background: #f8fafc !important;
     border-radius: 8px !important;
-    margin: 6px 0 !important;
+    border: 1px solid #e2e8f0 !important;
+    margin: 6px 0 12px 0 !important;
     list-style: none !important;
     box-shadow: none !important;
   }
 
   .jkit-menu-wrapper .jkit-menu li.menu-item-has-children .sub-menu.dropdown-open {
     display: block !important;
+    animation: jkitSubmenuFade 0.25s ease forwards;
+  }
+
+  @keyframes jkitSubmenuFade {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .jkit-menu-wrapper .jkit-menu li.menu-item-has-children .sub-menu li {
+    width: 100% !important;
+    border-bottom: 1px dashed #e2e8f0 !important;
+    display: block !important;
+  }
+
+  .jkit-menu-wrapper .jkit-menu li.menu-item-has-children .sub-menu li:last-child {
+    border-bottom: none !important;
   }
 
   .jkit-menu-wrapper .jkit-menu li.menu-item-has-children .sub-menu li a {
     display: block !important;
-    padding: 9px 12px !important;
+    padding: 10px 8px !important;
     font-size: 14px !important;
-    color: #475569 !important;
     font-weight: 500 !important;
-    border-radius: 6px;
+    color: #334155 !important;
+    text-decoration: none !important;
+    border-radius: 6px !important;
+    transition: all 0.15s ease !important;
   }
 
+  .jkit-menu-wrapper .jkit-menu li.menu-item-has-children .sub-menu li a:hover,
   .jkit-menu-wrapper .jkit-menu li.menu-item-has-children .sub-menu li a:active {
-    background: #e2e8f0;
-    color: #1C57A7;
+    background: #e2e8f0 !important;
+    color: #1C57A7 !important;
+    padding-left: 12px !important;
   }
 
-  /* Submenu toggle arrow indicator */
-  .jkit-menu-wrapper .menu-item-has-children > a::after {
-    content: '▼';
-    font-size: 10px;
-    transition: transform 0.25s ease;
-    color: #64748b;
+  /* Drawer Bottom Quick Action Buttons */
+  .jkit-drawer-actions {
+    order: 3 !important;
+    margin-top: 20px !important;
+    padding-top: 16px !important;
+    border-top: 1px solid #e2e8f0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
-  .jkit-menu-wrapper .menu-item-has-children.submenu-expanded > a::after {
-    transform: rotate(180deg);
-    color: #1C57A7;
+  .jkit-drawer-actions .drawer-btn-book {
+    background: #1CAD3E !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-family: "Source Sans 3", sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    padding: 12px 16px !important;
+    border-radius: 8px !important;
+    box-shadow: 0 3px 10px rgba(28, 173, 62, 0.25) !important;
+    transition: transform 0.15s ease, background 0.15s ease !important;
+    display: block !important;
+  }
+
+  .jkit-drawer-actions .drawer-btn-call {
+    background: #1C57A7 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-family: "Source Sans 3", sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    padding: 12px 16px !important;
+    border-radius: 8px !important;
+    box-shadow: 0 3px 10px rgba(28, 87, 167, 0.25) !important;
+    transition: transform 0.15s ease, background 0.15s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* ==========================================================================
+   2. TABLET ADAPTATIONS (768px - 1024px)
+   Grids, column splits, footer, and slider adaptations for tablet screens
+   ========================================================================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Two-column layout for treatment grids */
+  .elementor-section .elementor-container > .elementor-col-33,
+  .elementor-section .elementor-container > .elementor-column.elementor-col-33 {
+    width: 50% !important;
+    margin-bottom: 24px;
+  }
+
+  /* Inner treatment pages: Content (66%) and Sidebar (33%) */
+  .elementor-section .elementor-container > .elementor-col-66 {
+    width: 100% !important;
+    margin-bottom: 30px;
+  }
+
+  .elementor-section .elementor-container > .elementor-col-33:last-child {
+    width: 100% !important;
+  }
+
+  /* Footer 2x2 grid */
+  .elementor-230 .elementor-element.elementor-element-3764734d,
+  .elementor-230 .elementor-element.elementor-element-2a13670c {
+    width: 50% !important;
+    margin-bottom: 30px !important;
+  }
+
+  .elementor-230 .elementor-element.elementor-element-e40fd61 {
+    width: 50% !important;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .elementor-230 .elementor-element.elementor-element-190990db {
+    width: 50% !important;
+    margin-top: 0 !important;
+  }
+
+  /* SmartSlider 3 on Tablet */
+  .n2-ss-slider-3,
+  .n2-ss-slider-4,
+  .n2-ss-slide {
+    height: auto !important;
+    min-height: 460px !important;
+  }
+
+  .n-uc-104953c9ab0d6-inner > .n2-ss-layer-row-inner {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+
+  .n-uc-1fcdbdd9d52d2 {
+    width: 60% !important;
+  }
+
+  .n-uc-1c5b0d387b77d {
+    width: 40% !important;
+  }
+}
+
+/* ==========================================================================
+   3. MOBILE CONTENT ADAPTATIONS (<= 767px)
+   ========================================================================== */
+@media (max-width: 767px) {
+  /* Prevent horizontal scroll on small screens */
+  body {
+    padding-bottom: 60px !important; /* Space for mobile floating action bar */
   }
 
   /* All General Elementor Columns Stack to 100% on Mobile (EXCLUDING header) */
@@ -449,16 +556,6 @@
     position: relative !important;
   }
 
-  .n2-ss-slide-limiter {
-    height: auto !important;
-  }
-
-  .n2-ss-layers-container {
-    position: relative !important;
-    height: auto !important;
-    padding: 24px 12px !important;
-  }
-
   .n-uc-104953c9ab0d6-inner > .n2-ss-layer-row-inner {
     display: flex !important;
     flex-direction: column-reverse !important;
@@ -469,7 +566,9 @@
   .n-uc-1fcdbdd9d52d2,
   .n-uc-1c5b0d387b77d {
     width: 100% !important;
+    max-width: 100% !important;
     text-align: center !important;
+    margin-bottom: 16px;
   }
 
   .n-uc-1317614aaf38a img {
@@ -486,9 +585,12 @@
     margin-top: 15px !important;
   }
 
-  /* ------------------------------------------------------------------------
-     Treatment Cards & Service Boxes
-     ------------------------------------------------------------------------ */
+  .n2-ss-layer[data-desktopportraitpadding],
+  .n2-ss-layer[data-desktopportraitfontsize] {
+    padding: 10px 14px !important;
+  }
+
+  /* Treatment Cards & Service Boxes */
   .elementor-widget-image-box,
   .elementor-widget-icon-box {
     margin-bottom: 20px !important;
@@ -501,7 +603,7 @@
   .wpcf7-form textarea,
   .wpcf7-form select {
     width: 100% !important;
-    font-size: 16px !important; /* Prevents auto-zoom on iOS */
+    font-size: 16px !important;
     padding: 12px 14px !important;
     border-radius: 8px !important;
     border: 1px solid #cbd5e1 !important;
@@ -514,37 +616,67 @@
     border-radius: 8px !important;
   }
 
-  /* Google Reviews Widget */
-  .ti-widget {
+  /* Treatment Inner Pages - Sidebar Cards Stack */
+  .elementor-element-31fb177,
+  .elementor-element-33b8a3e,
+  .elementor-element-cba4837 {
+    width: 100% !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* Google Reviews Trustindex on Mobile */
+  .ti-widget.ti-goog {
+    padding: 0 !important;
     max-width: 100% !important;
     overflow-x: hidden !important;
   }
 
+  .ti-widget.ti-goog .ti-review-item {
+    margin-bottom: 16px !important;
+  }
+
   /* ------------------------------------------------------------------------
-     Footer Section on Mobile
+     Footer Accordion on Mobile (Elementor 230)
      ------------------------------------------------------------------------ */
-  .elementor-230 {
-    padding-top: 30px !important;
-    padding-bottom: 20px !important;
+  .elementor-230 .elementor-element.elementor-element-3764734d,
+  .elementor-230 .elementor-element.elementor-element-2a13670c,
+  .elementor-230 .elementor-element.elementor-element-e40fd61,
+  .elementor-230 .elementor-element.elementor-element-190990db {
+    margin-bottom: 24px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 16px;
   }
 
-  .elementor-230 .elementor-element-3764734d,
-  .elementor-230 .elementor-element-2a13670c,
-  .elementor-230 .elementor-element-e40fd61,
-  .elementor-230 .elementor-element-190990db {
-    width: 100% !important;
-    padding: 0 !important;
-    margin: 0 0 26px 0 !important;
+  .elementor-230 .elementor-element.elementor-element-e40fd61,
+  .elementor-230 .elementor-element.elementor-element-190990db {
+    margin-top: 0 !important;
+    margin-left: 0 !important;
   }
 
-  .elementor-230 .elementor-element.elementor-element-315f7200 img {
-    max-width: 160px !important;
-    margin: 0 auto 12px auto !important;
-    display: block;
+  .elementor-230 .elementor-tab-title,
+  .elementor-230 .elementor-toggle-title {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .elementor-230 .elementor-tab-title::after,
+  .elementor-230 .elementor-toggle-title::after {
+    content: '+';
+    font-size: 20px;
+    font-weight: bold;
+    color: #00b4d8;
+  }
+
+  .elementor-230 .elementor-tab-title.elementor-active::after,
+  .elementor-230 .elementor-toggle-title.elementor-active::after {
+    content: '−';
   }
 
   .elementor-230 .elementor-tab-content {
-    padding: 10px 0 0 10px !important;
+    padding-top: 10px;
   }
 
   .elementor-230 .elementor-tab-content h6 {
@@ -570,10 +702,10 @@
   }
 }
 
-/* --------------------------------------------------------------------------
+/* ==========================================================================
    4. MOBILE FLOATING ACTION BAR (STICKY BOTTOM)
    Boosts mobile conversion for phone calling & appointment booking
-   -------------------------------------------------------------------------- */
+   ========================================================================== */
 .mobile-quick-bar {
   display: none;
 }
@@ -651,3 +783,58 @@
   }
 }
 
+/* ==========================================================================
+   5. DESKTOP VIEWPORT (>= 1025px) - 100% PRESERVED ORIGINAL BEHAVIOR
+   Ensures desktop has normal horizontal menu, hamburger is hidden,
+   and original 1140px boxed layout and margins remain intact
+   ========================================================================== */
+@media (min-width: 1025px) {
+  .elementor-element.elementor-element-a3af69b .jeg-elementor-kit.jkit-nav-menu .jkit-hamburger-menu,
+  .elementor-224 .jeg-elementor-kit.jkit-nav-menu .jkit-hamburger-menu,
+  .jeg-elementor-kit.jkit-nav-menu .jkit-hamburger-menu {
+    display: none !important;
+  }
+
+  .elementor-224 .elementor-element.elementor-element-a3af69b .jeg-elementor-kit.jkit-nav-menu .jkit-menu-wrapper,
+  .elementor-element.elementor-element-a3af69b .jeg-elementor-kit.jkit-nav-menu .jkit-menu-wrapper,
+  .jeg-elementor-kit.jkit-nav-menu .jkit-menu-wrapper {
+    position: static !important;
+    right: auto !important;
+    left: auto !important;
+    width: auto !important;
+    max-width: none !important;
+    height: auto !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    display: flex !important;
+    flex-direction: row !important;
+    visibility: visible !important;
+    transform: none !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    transition: none !important;
+  }
+
+  .jkit-menu-wrapper .jkit-nav-identity-panel,
+  .jkit-menu-wrapper .jkit-drawer-actions,
+  .jkit-overlay {
+    display: none !important;
+  }
+
+  .jkit-menu-wrapper .jkit-menu-container {
+    width: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .jkit-menu-wrapper .jkit-menu {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .jkit-menu-wrapper .menu-item-has-children > a::after {
+    display: none !important;
+  }
+}
