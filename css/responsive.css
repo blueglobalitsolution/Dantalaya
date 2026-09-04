@@ -1,38 +1,18 @@
 /* ==========================================================================
    DANTALAYA COSMETIC DENTAL CLINIC - RESPONSIVE STYLESHEET
    Supports: Mobile (320px - 767px) & Tablet (768px - 1024px)
+   DESKTOP (>= 1025px) PRESERVES ORIGINAL 1140px BOXED LAYOUT AND GUTTERS
    ========================================================================== */
 
-/* --------------------------------------------------------------------------
-   1. GLOBAL VIEWPORT & OVERFLOW CONTROL
-   -------------------------------------------------------------------------- */
-html, body {
-  max-width: 100vw;
-  overflow-x: hidden !important;
-  box-sizing: border-box;
-}
-
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-img, svg, iframe, video {
-  max-width: 100% !important;
-  height: auto;
-}
-
-/* Ensure container does not exceed screen width */
-.elementor-container,
-.elementor-row,
-.elementor-widget-wrap {
-  max-width: 100% !important;
-  box-sizing: border-box;
+/* Ensure animated elements (e.g. CTA buttons) are never stuck hidden */
+.elementor-invisible {
+  visibility: visible !important;
 }
 
 /* --------------------------------------------------------------------------
    2. TABLET ADAPTATIONS (768px - 1024px)
    -------------------------------------------------------------------------- */
-@media (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   /* Header adjustments for Tablet */
   .elementor-224 .elementor-element.elementor-element-7ecc71f2 {
     padding: 10px 20px !important;
