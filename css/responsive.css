@@ -1,0 +1,673 @@
+/* ==========================================================================
+   DANTALAYA COSMETIC DENTAL CLINIC - RESPONSIVE STYLESHEET
+   Supports: Mobile (320px - 767px) & Tablet (768px - 1024px)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. GLOBAL VIEWPORT & OVERFLOW CONTROL
+   -------------------------------------------------------------------------- */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden !important;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img, svg, iframe, video {
+  max-width: 100% !important;
+  height: auto;
+}
+
+/* Ensure container does not exceed screen width */
+.elementor-container,
+.elementor-row,
+.elementor-widget-wrap {
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   2. TABLET ADAPTATIONS (768px - 1024px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  /* Header adjustments for Tablet */
+  .elementor-224 .elementor-element.elementor-element-7ecc71f2 {
+    padding: 10px 20px !important;
+  }
+
+  .elementor-224 .elementor-element.elementor-element-7ecc71f2 > .elementor-container {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    min-height: 54px !important;
+  }
+
+  .elementor-224 .elementor-element.elementor-element-5d76a6c2 {
+    width: 32% !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .elementor-224 .elementor-element.elementor-element-7587c034 {
+    width: 68% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+  }
+
+  .elementor-224 .elementor-element.elementor-element-1d2069b6 img {
+    max-height: 48px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .elementor-224 .jkit-menu-wrapper .jkit-menu > li > a {
+    font-size: 15px !important;
+    padding: 0 12px !important;
+  }
+
+  /* Two-column layout for treatment grids */
+  .elementor-section .elementor-container > .elementor-col-33,
+  .elementor-section .elementor-container > .elementor-column.elementor-col-33 {
+    width: 50% !important;
+    margin-bottom: 24px;
+  }
+
+  /* Inner treatment pages: Content (66%) and Sidebar (33%) */
+  .elementor-section .elementor-container > .elementor-col-66 {
+    width: 100% !important;
+    margin-bottom: 30px;
+  }
+
+  .elementor-section .elementor-container > .elementor-col-33:last-child {
+    width: 100% !important;
+  }
+
+  /* Footer 2x2 grid */
+  .elementor-230 .elementor-element.elementor-element-3764734d,
+  .elementor-230 .elementor-element.elementor-element-2a13670c {
+    width: 50% !important;
+    margin-bottom: 30px !important;
+  }
+
+  .elementor-230 .elementor-element.elementor-element-e40fd61 {
+    width: 50% !important;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .elementor-230 .elementor-element.elementor-element-190990db {
+    width: 50% !important;
+    margin-top: 0 !important;
+  }
+
+  /* SmartSlider 3 on Tablet */
+  .n2-ss-slider-3,
+  .n2-ss-slider-4,
+  .n2-ss-slide {
+    height: auto !important;
+    min-height: 460px !important;
+  }
+
+  .n-uc-104953c9ab0d6-inner > .n2-ss-layer-row-inner {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+
+  .n-uc-1fcdbdd9d52d2 {
+    width: 60% !important;
+  }
+
+  .n-uc-1c5b0d387b77d {
+    width: 40% !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. MOBILE ADAPTATIONS (<= 767px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  /* Prevent horizontal scroll on small screens */
+  body {
+    padding-bottom: 60px !important; /* Space for mobile floating action bar */
+  }
+
+  /* Header Section - Perfect vertical alignment & compact height */
+  header#masthead,
+  .elementor-224 {
+    width: 100% !important;
+    background: #ffffff !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  .elementor-224 .elementor-element.elementor-element-7ecc71f2 {
+    padding: 8px 16px !important;
+    margin: 0 !important;
+    background: #ffffff !important;
+    height: auto !important;
+    min-height: 56px !important;
+  }
+
+  .elementor-224 .elementor-element.elementor-element-7ecc71f2 > .elementor-container {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 48px !important;
+    height: auto !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    gap: 12px !important;
+  }
+
+  /* Logo Column (Left) */
+  .elementor-224 .elementor-column.elementor-element-5d76a6c2 {
+    display: flex !important;
+    align-items: center !important;
+    width: auto !important;
+    flex: 0 1 auto !important;
+    max-width: calc(100% - 64px) !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .elementor-224 .elementor-column.elementor-element-5d76a6c2 > .elementor-widget-wrap,
+  .elementor-224 .elementor-element.elementor-element-1d2069b6,
+  .elementor-224 .elementor-element.elementor-element-1d2069b6 .elementor-widget-container {
+    display: flex !important;
+    align-items: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: auto !important;
+  }
+
+  .elementor-224 .elementor-element.elementor-element-1d2069b6 img {
+    max-height: 44px !important;
+    width: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+
+  /* Nav Menu / Hamburger Column (Right) */
+  .elementor-224 .elementor-column.elementor-element-7587c034 {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    width: auto !important;
+    flex: 0 0 auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .elementor-224 .elementor-column.elementor-element-7587c034 > .elementor-widget-wrap,
+  .elementor-224 .elementor-element.elementor-element-a3af69b,
+  .elementor-224 .elementor-element.elementor-element-a3af69b .elementor-widget-container,
+  .elementor-224 .jeg-elementor-kit.jkit-nav-menu {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  /* Hamburger Menu Button */
+  .elementor-224 .jeg-elementor-kit.jkit-nav-menu .jkit-hamburger-menu {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    background: #1C57A7 !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+    border: none !important;
+    cursor: pointer !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+    box-shadow: 0 3px 8px rgba(28, 87, 167, 0.28) !important;
+    transition: transform 0.15s ease, background 0.15s ease !important;
+    line-height: 1 !important;
+  }
+
+  .elementor-224 .jeg-elementor-kit.jkit-nav-menu .jkit-hamburger-menu:active {
+    transform: scale(0.93) !important;
+  }
+
+  .elementor-224 .jeg-elementor-kit.jkit-nav-menu .jkit-hamburger-menu i,
+  .elementor-224 .jeg-elementor-kit.jkit-nav-menu .jkit-hamburger-menu svg {
+    font-size: 20px !important;
+    width: 20px !important;
+    height: 20px !important;
+    color: #ffffff !important;
+    fill: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Hide desktop columns on mobile */
+  .elementor-224 .elementor-element.elementor-element-56c97d55,
+  .elementor-224 .elementor-element.elementor-element-268f3387 {
+    display: none !important;
+  }
+
+  .jeg-elementor-kit.jkit-nav-menu .jkit-hamburger-menu i {
+    font-size: 22px !important;
+    color: #ffffff !important;
+  }
+
+  .jeg-elementor-kit.jkit-nav-menu .jkit-hamburger-menu svg {
+    width: 22px !important;
+    height: 22px !important;
+    fill: #ffffff !important;
+  }
+
+  /* Mobile Slide-in Drawer */
+  .jeg-elementor-kit.jkit-nav-menu .jkit-menu-wrapper {
+    position: fixed !important;
+    top: 0 !important;
+    right: -105% !important;
+    left: auto !important;
+    width: 85% !important;
+    max-width: 320px !important;
+    height: 100vh !important;
+    background: #ffffff !important;
+    box-shadow: -8px 0 25px rgba(0, 0, 0, 0.15) !important;
+    z-index: 10000 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: 20px !important;
+    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  .jeg-elementor-kit.jkit-nav-menu .jkit-menu-wrapper.active {
+    right: 0 !important;
+  }
+
+  /* Backdrop Overlay */
+  .jkit-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(11, 39, 66, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .jkit-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Drawer Top Identity / Close */
+  .jkit-menu-wrapper .jkit-nav-identity-panel {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    padding-bottom: 16px !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    margin-bottom: 16px !important;
+  }
+
+  .jkit-menu-wrapper .jkit-close-menu {
+    width: 38px !important;
+    height: 38px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #f1f5f9 !important;
+    color: #1e293b !important;
+    border-radius: 50% !important;
+    border: none !important;
+    cursor: pointer;
+    font-size: 18px !important;
+  }
+
+  /* Mobile Menu Items */
+  .jkit-menu-wrapper .jkit-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  .jkit-menu-wrapper .jkit-menu > li {
+    width: 100% !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+    display: block !important;
+  }
+
+  .jkit-menu-wrapper .jkit-menu > li > a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 14px 10px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    text-decoration: none !important;
+  }
+
+  .jkit-menu-wrapper .jkit-menu > li.current-menu-item > a {
+    color: #1C57A7 !important;
+  }
+
+  /* Sub-menu (Treatments) Accordion in Mobile */
+  .jkit-menu-wrapper .jkit-menu li.menu-item-has-children .sub-menu {
+    display: none !important;
+    padding: 8px 0 12px 14px !important;
+    background: #f8fafc !important;
+    border-radius: 8px !important;
+    margin: 6px 0 !important;
+    list-style: none !important;
+    box-shadow: none !important;
+  }
+
+  .jkit-menu-wrapper .jkit-menu li.menu-item-has-children .sub-menu.dropdown-open {
+    display: block !important;
+  }
+
+  .jkit-menu-wrapper .jkit-menu li.menu-item-has-children .sub-menu li a {
+    display: block !important;
+    padding: 9px 12px !important;
+    font-size: 14px !important;
+    color: #475569 !important;
+    font-weight: 500 !important;
+    border-radius: 6px;
+  }
+
+  .jkit-menu-wrapper .jkit-menu li.menu-item-has-children .sub-menu li a:active {
+    background: #e2e8f0;
+    color: #1C57A7;
+  }
+
+  /* Submenu toggle arrow indicator */
+  .jkit-menu-wrapper .menu-item-has-children > a::after {
+    content: '▼';
+    font-size: 10px;
+    transition: transform 0.25s ease;
+    color: #64748b;
+  }
+
+  .jkit-menu-wrapper .menu-item-has-children.submenu-expanded > a::after {
+    transform: rotate(180deg);
+    color: #1C57A7;
+  }
+
+  /* All General Elementor Columns Stack to 100% on Mobile (EXCLUDING header) */
+  .elementor-section:not(.elementor-element-7ecc71f2) > .elementor-container > .elementor-column,
+  .elementor-section:not(.elementor-element-7ecc71f2) .elementor-col-100,
+  .elementor-section:not(.elementor-element-7ecc71f2) .elementor-col-50,
+  .elementor-section:not(.elementor-element-7ecc71f2) .elementor-col-33,
+  .elementor-section:not(.elementor-element-7ecc71f2) .elementor-col-25,
+  .elementor-section:not(.elementor-element-7ecc71f2) .elementor-col-20,
+  .elementor-section:not(.elementor-element-7ecc71f2) .elementor-col-66,
+  .elementor-section:not(.elementor-element-7ecc71f2) .elementor-col-70,
+  .elementor-section:not(.elementor-element-7ecc71f2) .elementor-col-30 {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .elementor-container {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  /* Fluid Typography on Mobile */
+  h1.elementor-heading-title {
+    font-size: clamp(24px, 6.5vw, 34px) !important;
+    line-height: 1.2 !important;
+    word-break: break-word !important;
+  }
+
+  h2.elementor-heading-title {
+    font-size: clamp(20px, 5.5vw, 26px) !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+  }
+
+  h3.elementor-heading-title,
+  h3.elementor-image-box-title {
+    font-size: clamp(17px, 4.5vw, 22px) !important;
+    line-height: 1.3 !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     SmartSlider 3 (Doctor Bio Section) Overrides on Mobile
+     ------------------------------------------------------------------------ */
+  .n2-ss-slider-3,
+  .n2-ss-slider-4,
+  .n2-ss-slide {
+    height: auto !important;
+    min-height: auto !important;
+    position: relative !important;
+  }
+
+  .n2-ss-slide-limiter {
+    height: auto !important;
+  }
+
+  .n2-ss-layers-container {
+    position: relative !important;
+    height: auto !important;
+    padding: 24px 12px !important;
+  }
+
+  .n-uc-104953c9ab0d6-inner > .n2-ss-layer-row-inner {
+    display: flex !important;
+    flex-direction: column-reverse !important;
+    align-items: center !important;
+    gap: 20px !important;
+  }
+
+  .n-uc-1fcdbdd9d52d2,
+  .n-uc-1c5b0d387b77d {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .n-uc-1317614aaf38a img {
+    max-width: 220px !important;
+    max-height: 260px !important;
+    margin: 0 auto 15px auto !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important;
+  }
+
+  .n2-ss-button-container {
+    justify-content: center !important;
+    display: flex !important;
+    margin-top: 15px !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     Treatment Cards & Service Boxes
+     ------------------------------------------------------------------------ */
+  .elementor-widget-image-box,
+  .elementor-widget-icon-box {
+    margin-bottom: 20px !important;
+  }
+
+  /* Form & Inputs on Mobile */
+  .wpcf7-form input[type="text"],
+  .wpcf7-form input[type="email"],
+  .wpcf7-form input[type="tel"],
+  .wpcf7-form textarea,
+  .wpcf7-form select {
+    width: 100% !important;
+    font-size: 16px !important; /* Prevents auto-zoom on iOS */
+    padding: 12px 14px !important;
+    border-radius: 8px !important;
+    border: 1px solid #cbd5e1 !important;
+  }
+
+  .wpcf7-form input[type="submit"] {
+    width: 100% !important;
+    padding: 14px 20px !important;
+    font-size: 16px !important;
+    border-radius: 8px !important;
+  }
+
+  /* Google Reviews Widget */
+  .ti-widget {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     Footer Section on Mobile
+     ------------------------------------------------------------------------ */
+  .elementor-230 {
+    padding-top: 30px !important;
+    padding-bottom: 20px !important;
+  }
+
+  .elementor-230 .elementor-element-3764734d,
+  .elementor-230 .elementor-element-2a13670c,
+  .elementor-230 .elementor-element-e40fd61,
+  .elementor-230 .elementor-element-190990db {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 0 26px 0 !important;
+  }
+
+  .elementor-230 .elementor-element.elementor-element-315f7200 img {
+    max-width: 160px !important;
+    margin: 0 auto 12px auto !important;
+    display: block;
+  }
+
+  .elementor-230 .elementor-tab-content {
+    padding: 10px 0 0 10px !important;
+  }
+
+  .elementor-230 .elementor-tab-content h6 {
+    margin: 8px 0 !important;
+  }
+
+  .elementor-230 .elementor-tab-content a {
+    display: inline-block;
+    padding: 4px 0;
+    font-size: 15px !important;
+  }
+
+  .elementor-230 .elementor-element.elementor-element-341ceb5e {
+    margin-top: 24px !important;
+    padding: 16px 0 10px 0 !important;
+  }
+
+  .elementor-230 .elementor-element.elementor-element-66408b8e,
+  .elementor-230 .elementor-element.elementor-element-5bb831a3 {
+    text-align: center !important;
+    font-size: 14px !important;
+    margin-bottom: 8px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. MOBILE FLOATING ACTION BAR (STICKY BOTTOM)
+   Boosts mobile conversion for phone calling & appointment booking
+   -------------------------------------------------------------------------- */
+.mobile-quick-bar {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .mobile-quick-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.12);
+    z-index: 9998;
+    padding: 8px 12px;
+    gap: 10px;
+    box-sizing: border-box;
+  }
+
+  .mobile-quick-bar a {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 10px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    transition: transform 0.15s ease, filter 0.15s ease;
+  }
+
+  .mobile-quick-bar a,
+  .mobile-quick-bar a:link,
+  .mobile-quick-bar a:visited,
+  .mobile-quick-bar a:hover,
+  .mobile-quick-bar a:focus,
+  .mobile-quick-bar a:active,
+  .mobile-quick-bar a span {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+
+  .mobile-quick-bar a:active {
+    transform: scale(0.97);
+  }
+
+  .mobile-quick-bar .btn-call,
+  .mobile-quick-bar .btn-call:link,
+  .mobile-quick-bar .btn-call:visited,
+  .mobile-quick-bar .btn-call:hover {
+    background: #1C57A7 !important;
+    color: #ffffff !important;
+  }
+
+  .mobile-quick-bar .btn-book,
+  .mobile-quick-bar .btn-book:link,
+  .mobile-quick-bar .btn-book:visited,
+  .mobile-quick-bar .btn-book:hover {
+    background: #1CAD3E !important;
+    color: #ffffff !important;
+  }
+
+  .mobile-quick-bar svg {
+    width: 16px !important;
+    height: 16px !important;
+    fill: #ffffff !important;
+    color: #ffffff !important;
+    flex-shrink: 0 !important;
+  }
+}
+
