@@ -472,27 +472,7 @@
     margin-top: 0 !important;
   }
 
-  /* SmartSlider 3 on Tablet */
-  .n2-ss-slider-3,
-  .n2-ss-slider-4,
-  .n2-ss-slide {
-    height: auto !important;
-    min-height: 460px !important;
-  }
 
-  .n-uc-104953c9ab0d6-inner > .n2-ss-layer-row-inner {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-  }
-
-  .n-uc-1fcdbdd9d52d2 {
-    width: 60% !important;
-  }
-
-  .n-uc-1c5b0d387b77d {
-    width: 40% !important;
-  }
 }
 
 /* ==========================================================================
@@ -545,55 +525,21 @@
     line-height: 1.3 !important;
   }
 
-  /* ------------------------------------------------------------------------
-     SmartSlider 3 (Doctor Bio Section) Overrides on Mobile
-     ------------------------------------------------------------------------ */
-  .n2-ss-slider-3,
-  .n2-ss-slider-4,
-  .n2-ss-slide {
-    height: auto !important;
-    min-height: auto !important;
-    position: relative !important;
-  }
 
-  .n-uc-104953c9ab0d6-inner > .n2-ss-layer-row-inner {
-    display: flex !important;
-    flex-direction: column-reverse !important;
-    align-items: center !important;
-    gap: 20px !important;
-  }
-
-  .n-uc-1fcdbdd9d52d2,
-  .n-uc-1c5b0d387b77d {
-    width: 100% !important;
-    max-width: 100% !important;
-    text-align: center !important;
-    margin-bottom: 16px;
-  }
-
-  .n-uc-1317614aaf38a img {
-    max-width: 220px !important;
-    max-height: 260px !important;
-    margin: 0 auto 15px auto !important;
-    border-radius: 12px !important;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important;
-  }
-
-  .n2-ss-button-container {
-    justify-content: center !important;
-    display: flex !important;
-    margin-top: 15px !important;
-  }
-
-  .n2-ss-layer[data-desktopportraitpadding],
-  .n2-ss-layer[data-desktopportraitfontsize] {
-    padding: 10px 14px !important;
-  }
 
   /* Treatment Cards & Service Boxes */
   .elementor-widget-image-box,
   .elementor-widget-icon-box {
     margin-bottom: 20px !important;
+  }
+
+  /* Fix Doctor Images Overlapping Text due to Elementor negative margins */
+  .elementor-element-24e26cb, /* Kavit Text Column */
+  .elementor-element-c35988a, /* Niyati Text Column */
+  .elementor-element-57c8996  /* Mukesh Text Column */
+  {
+    margin-top: 120px !important;
+    padding-top: 20px !important;
   }
 
   /* Form & Inputs on Mobile */

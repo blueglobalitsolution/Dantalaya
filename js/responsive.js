@@ -158,13 +158,34 @@
     });
   }
 
+  function injectMobileQuickBar() {
+    if (document.querySelector('.mobile-quick-bar')) return;
+
+    const bar = document.createElement('div');
+    bar.className = 'mobile-quick-bar';
+    bar.setAttribute('aria-label', 'Mobile Quick Contact');
+    bar.innerHTML = `
+      <a href="tel:9824252667" class="btn-call" aria-label="Call Clinic">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.21 2.2z"/></svg>
+        <span>Call Now</span>
+      </a>
+      <a href="contact-us.html" class="btn-book" aria-label="Book Appointment">
+        <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+        <span>Appointment</span>
+      </a>
+    `;
+    document.body.appendChild(bar);
+  }
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () {
       initResponsiveNav();
       initFooterAccordion();
+      injectMobileQuickBar();
     });
   } else {
     initResponsiveNav();
     initFooterAccordion();
+    injectMobileQuickBar();
   }
 })();
