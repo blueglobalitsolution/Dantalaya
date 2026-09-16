@@ -681,6 +681,57 @@
     });
   }
 
+  function initFormHandling() {
+    document.querySelectorAll('.wpcf7-form').forEach(function (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var nameInput = form.querySelector('[name="your-name"]');
+        var phoneInput = form.querySelector('[name="tel-phone"]');
+        var emailInput = form.querySelector('[name="your-email"]');
+        var treatmentSelect = form.querySelector('[name="treatment-select"]');
+
+        var name = nameInput ? nameInput.value.trim() : '';
+        var phone = phoneInput ? phoneInput.value.trim() : '';
+        var email = emailInput ? emailInput.value.trim() : '';
+        var treatment = treatmentSelect ? treatmentSelect.value : 'Consultation';
+
+        var output = form.querySelector('.wpcf7-response-output');
+        if (!output) {
+          output = document.createElement('div');
+          output.className = 'wpcf7-response-output';
+          form.appendChild(output);
+        }
+
+        if (!name || !phone) {
+          output.style.display = 'block';
+          output.style.padding = '12px 16px';
+          output.style.marginTop = '15px';
+          output.style.borderRadius = '6px';
+          output.style.background = '#fef2f2';
+          output.style.color = '#991b1b';
+          output.style.border = '1px solid #f87171';
+          output.innerText = 'Please provide your name and phone number so we can confirm your appointment.';
+          return;
+        }
+
+        output.style.display = 'block';
+        output.style.padding = '14px 18px';
+        output.style.marginTop = '15px';
+        output.style.borderRadius = '6px';
+        output.style.background = '#f0fdf4';
+        output.style.color = '#166534';
+        output.style.border = '1px solid #86efac';
+        output.innerHTML = '<strong>Thank you, ' + name + '!</strong> Your appointment request for <em>' + (treatment || 'Consultation') + '</em> has been received. Dr. Kavit Shah\'s team will contact you at ' + phone + ' shortly.';
+
+        var submitBtn = form.querySelector('input[type="submit"], button[type="submit"]');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.value = 'Request Sent ✓';
+        }
+      });
+    });
+  }
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () {
       initResponsiveNav();
@@ -691,6 +742,7 @@
       initStatsCounters();
       initServicesSlider();
       initHomeFAQ();
+      initFormHandling();
     });
   } else {
     initResponsiveNav();
@@ -701,6 +753,7 @@
     initStatsCounters();
     initServicesSlider();
     initHomeFAQ();
+    initFormHandling();
   }
 })();
 

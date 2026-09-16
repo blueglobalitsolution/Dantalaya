@@ -3658,50 +3658,50 @@ footer#colophon,
 }
 
 /* ==========================================================================
-   12. DENTISTS / DOCTORS SHOWCASE CARDS (SCREENSHOT 2 EXACT 1:1 REPLICATION)
+   12. DENTISTS / DOCTORS SHOWCASE CARDS (RESPONSIVE 1:1 PROFILE CARDS)
    ========================================================================== */
 .dentists-showcase-section {
-  padding: 90px 0 120px;
+  padding: 80px 0 110px;
   background-color: #ffffff;
   position: relative;
   width: 100%;
 }
 
 .dentists-showcase-container {
-  max-width: 1220px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 32px;
   display: flex;
   flex-direction: column;
-  gap: 44px;
+  gap: 40px;
   box-sizing: border-box;
 }
 
 .dentist-showcase-card {
-  background: #f8fafc;
-  border: 1px solid #eef2f6;
-  border-radius: 28px;
+  background: #faf8f5;
+  border: 1px solid #f0eae1;
+  border-radius: 24px;
   padding: 0;
   display: flex;
   align-items: stretch;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.035);
+  box-shadow: 0 8px 30px rgba(94, 64, 54, 0.05);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
-  min-height: 480px;
+  min-height: 460px;
 }
 
 .dentist-showcase-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 18px 45px rgba(94, 64, 54, 0.1);
 }
 
-/* Left Photo Container (Flush Left, Large Full Height Portrait) */
+/* Left Photo Container */
 .dentist-card-photo-wrapper {
   flex: 0 0 380px;
   width: 380px;
   min-height: 100%;
-  background: #cbd5e1;
+  background: #ede8e1;
   position: relative;
   overflow: hidden;
 }
@@ -3709,30 +3709,34 @@ footer#colophon,
 .dentist-card-photo {
   width: 100%;
   height: 100%;
-  min-height: 480px;
+  min-height: 460px;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 15%;
   display: block;
 }
 
-/* Middle Content Area (Spacious & Large Text) */
+/* Middle Content Area */
 .dentist-card-content {
   flex: 1 1 auto;
-  padding: 52px 64px 52px 56px;
+  padding: 48px 56px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   z-index: 2;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .dentist-name {
   font-family: var(--font-heading) !important;
   font-size: 30px !important;
   font-weight: 700 !important;
-  color: #0f1e36 !important;
+  color: #5e4036 !important;
   margin: 0 0 6px 0 !important;
-  letter-spacing: -0.025em !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.2 !important;
 }
 
 .dentist-role-badge {
@@ -3740,11 +3744,11 @@ footer#colophon,
   font-size: 15.5px;
   font-weight: 600;
   color: #c79730;
-  margin-bottom: 26px;
+  margin-bottom: 24px;
 }
 
 .dentist-info-group {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   width: 100%;
   max-width: 620px;
 }
@@ -3753,8 +3757,8 @@ footer#colophon,
   font-family: var(--font-heading) !important;
   font-size: 16.5px !important;
   font-weight: 700 !important;
-  color: #2d2421 !important;
-  margin: 0 0 6px 0 !important;
+  color: #5e4036 !important;
+  margin: 0 0 5px 0 !important;
   letter-spacing: -0.01em !important;
 }
 
@@ -3794,81 +3798,240 @@ footer#colophon,
   font-weight: 700;
 }
 
-/* Minimalist Social & Contact Icons */
+/* Social & Contact Icons */
 .dentist-social-row {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
   margin-top: 14px;
 }
 
 .dentist-social-row a {
   color: #5e4036 !important;
-  font-size: 17px;
+  font-size: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f0eae1;
   text-decoration: none !important;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
 .dentist-social-row a:hover {
-  color: #c79730 !important;
+  background: #5e4036;
+  color: #ffffff !important;
   transform: translateY(-2px);
 }
 
-/* Big Ghost Number Watermark (Screenshot 2 Accent) */
+/* Watermark Number */
 .dentist-watermark-number {
   position: absolute;
-  right: 55px;
-  bottom: 35px;
+  right: 50px;
+  bottom: 30px;
   font-family: var(--font-heading);
-  font-size: 180px;
+  font-size: 160px;
   font-weight: 800;
   color: #5e4036;
   line-height: 1;
   user-select: none;
   pointer-events: none;
-  opacity: 0.06;
+  opacity: 0.05;
   z-index: 1;
 }
 
-/* Responsive Styles for Doctors Showcase */
-@media (max-width: 1100px) {
+/* ==========================================================================
+   DOCTORS SHOWCASE: TABLET RESPONSIVENESS (768px - 1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .dentists-showcase-section {
+    padding: 60px 0 85px;
+  }
+
+  .dentists-showcase-container {
+    padding: 0 24px;
+    gap: 32px;
+  }
+
+  .dentist-showcase-card {
+    min-height: 400px;
+    border-radius: 20px;
+  }
+
   .dentist-card-photo-wrapper {
-    flex: 0 0 320px;
-    width: 320px;
+    flex: 0 0 300px;
+    width: 300px;
+  }
+
+  .dentist-card-photo {
+    min-height: 400px;
   }
 
   .dentist-card-content {
-    padding: 38px 44px;
-  }
-
-  .dentist-watermark-number {
-    font-size: 130px;
-    right: 35px;
-    bottom: 25px;
-  }
-}
-
-@media (max-width: 900px) {
-  .dentist-card-photo-wrapper {
-    flex: 0 0 260px;
-    width: 260px;
-  }
-
-  .dentist-card-content {
-    padding: 30px 32px;
+    padding: 34px 38px;
   }
 
   .dentist-name {
-    font-size: 24px !important;
+    font-size: 26px !important;
+  }
+
+  .dentist-role-badge {
+    font-size: 14.5px;
+    margin-bottom: 20px;
+  }
+
+  .dentist-info-heading {
+    font-size: 15.5px !important;
+  }
+
+  .dentist-info-val,
+  .dentist-spec-list li {
+    font-size: 14.5px !important;
   }
 
   .dentist-watermark-number {
-    font-size: 100px;
+    font-size: 110px;
     right: 25px;
     bottom: 20px;
+  }
+}
+
+/* ==========================================================================
+   DOCTORS SHOWCASE: MOBILE & COMPACT SCREENS (<= 767px)
+   ========================================================================== */
+@media (max-width: 767px) {
+  .dentists-showcase-section {
+    padding: 35px 0 60px !important;
+  }
+
+  .dentists-showcase-container {
+    padding: 0 16px !important;
+    gap: 24px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .dentist-showcase-card {
+    flex-direction: column !important;
+    width: 100% !important;
+    min-height: auto !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+    background: #faf8f5 !important;
+    border: 1px solid #f0eae1 !important;
+    box-shadow: 0 4px 18px rgba(94, 64, 54, 0.08) !important;
+  }
+
+  .dentist-card-photo-wrapper {
+    flex: none !important;
+    width: 100% !important;
+    height: 300px !important;
+    max-height: 300px !important;
+    min-height: 0 !important;
+    background: #ede8e1 !important;
+    border-bottom: 1px solid #f0eae1 !important;
+  }
+
+  .dentist-card-photo {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 300px !important;
+    min-height: 0 !important;
+    object-fit: cover !important;
+    object-position: center 12% !important;
+    display: block !important;
+  }
+
+  .dentist-card-content {
+    width: 100% !important;
+    padding: 24px 18px 24px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .dentist-name {
+    font-size: 22px !important;
+    line-height: 1.25 !important;
+    margin: 0 0 4px 0 !important;
+    word-break: break-word !important;
+    color: #5e4036 !important;
+  }
+
+  .dentist-role-badge {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #c79730 !important;
+    margin-bottom: 16px !important;
+    line-height: 1.35 !important;
+  }
+
+  .dentist-info-group {
+    margin-bottom: 14px !important;
+    width: 100% !important;
+  }
+
+  .dentist-info-heading {
+    font-size: 14.5px !important;
+    font-weight: 700 !important;
+    color: #5e4036 !important;
+    margin: 0 0 4px 0 !important;
+  }
+
+  .dentist-info-val {
+    font-size: 13.5px !important;
+    line-height: 1.5 !important;
+    color: #6e6460 !important;
+    word-break: break-word !important;
+  }
+
+  .dentist-spec-list {
+    gap: 5px !important;
+  }
+
+  .dentist-spec-list li {
+    font-size: 13.5px !important;
+    line-height: 1.45 !important;
+    padding-left: 20px !important;
+    color: #6e6460 !important;
+    word-break: break-word !important;
+  }
+
+  .dentist-spec-list li::before {
+    color: #c79730 !important;
+    font-size: 13px !important;
+  }
+
+  .dentist-social-row {
+    gap: 14px !important;
+    margin-top: 8px !important;
+  }
+
+  .dentist-social-row a {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    background: #f0eae1 !important;
+    color: #5e4036 !important;
+    font-size: 15px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .dentist-watermark-number {
+    display: none !important;
+  }
+
+  /* Scroll To Top Button clearance above mobile bottom sticky quick bar */
+  #wpfront-scroll-top-container {
+    bottom: 82px !important;
+    right: 14px !important;
+    z-index: 998 !important;
   }
 }
 
@@ -4342,21 +4505,23 @@ footer#colophon,
 }
 
 /* ==========================================================================
-   19. HOMEPAGE TABBED FAQ SECTION (EXACT 1:1 REPLICATION)
+   19. HOMEPAGE TABBED FAQ SECTION (EXACT 1:1 REPLICATION & FULLY RESPONSIVE)
    ========================================================================== */
 .dantalaya-home-faq-section {
   background-color: #ffffff;
-  padding: 70px 0 90px;
+  padding: 80px 0 100px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: #1a202c;
   border-top: none;
+  overflow: hidden;
 }
 
 .home-faq-container {
-  max-width: 1080px;
+  max-width: 1120px;
   margin: 0 auto;
   padding: 0 32px;
   box-sizing: border-box;
+  width: 100%;
 }
 
 /* Category Tabs Bar */
@@ -4364,10 +4529,11 @@ footer#colophon,
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1.5px solid #f0eae1;
   padding: 0 0 16px 0;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -4379,25 +4545,29 @@ footer#colophon,
 .faq-tab-btn {
   background: transparent;
   border: none;
-  padding: 0;
-  font-size: 14.5px;
+  padding: 8px 14px;
+  font-size: 16.5px;
   font-weight: 500;
   color: #8b95a5;
   cursor: pointer;
   white-space: nowrap;
   position: relative;
-  transition: color 0.15s ease;
+  transition: all 0.2s ease;
   font-family: inherit;
   outline: none;
+  border-radius: 6px;
+  flex-shrink: 0;
 }
 
 .faq-tab-btn:hover {
-  color: #1a202c;
+  color: #c79730;
+  background-color: #faf8f5;
 }
 
 .faq-tab-btn.active {
-  color: #0f172a;
+  color: #5e4036;
   font-weight: 700;
+  background-color: #faf8f5;
 }
 
 .faq-tab-btn.active::after {
@@ -4407,6 +4577,7 @@ footer#colophon,
 /* Tab Panes */
 .faq-tab-pane {
   display: none;
+  width: 100%;
 }
 
 .faq-tab-pane.active {
@@ -4417,10 +4588,13 @@ footer#colophon,
 .faq-accordion-list {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .faq-item {
-  border-bottom: 1px solid #eef2f6;
+  border-bottom: 1px solid #f0eae1;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .faq-question-btn {
@@ -4433,33 +4607,44 @@ footer#colophon,
   justify-content: space-between;
   text-align: left;
   cursor: pointer;
-  gap: 20px;
+  gap: 16px;
   font-family: inherit;
   outline: none;
+  box-sizing: border-box;
 }
 
 .faq-question-text {
-  font-size: 15.5px;
+  flex: 1 1 auto;
+  font-size: 18px;
   font-weight: 700;
   color: #2d2421;
-  line-height: 1.35;
-  letter-spacing: -0.01em;
+  line-height: 1.45;
+  letter-spacing: -0.015em;
+  transition: color 0.2s ease;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  padding-right: 4px;
+}
+
+.faq-question-btn:hover .faq-question-text {
+  color: #c79730;
 }
 
 .faq-chevron-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 18px;
-  height: 18px;
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
   color: #d7b56d;
   flex-shrink: 0;
   transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .faq-chevron-icon svg {
-  width: 14px;
-  height: 14px;
+  width: 17px;
+  height: 17px;
   stroke: #d7b56d;
   stroke-width: 2.5;
 }
@@ -4477,61 +4662,423 @@ footer#colophon,
 .faq-answer-collapse {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .faq-answer-inner {
-  padding: 0 0 24px 0;
+  padding: 0 0 26px 0;
 }
 
 .faq-answer-inner p {
   margin: 0;
-  font-size: 14.5px;
-  line-height: 1.6;
-  color: #8fa0b5;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #6e6460;
   font-weight: 400;
 }
 
-/* Responsive adjustments */
-@media (max-width: 880px) {
+/* Tablet Responsiveness (768px - 1024px) */
+@media (max-width: 1024px) {
+  .dantalaya-home-faq-section {
+    padding: 60px 0 75px;
+  }
+
+  .home-faq-container {
+    padding: 0 24px;
+  }
+
   .faq-category-tabs {
     justify-content: flex-start;
-    gap: 28px;
+    gap: 12px;
     padding-bottom: 14px;
+  }
+
+  .faq-tab-btn {
+    font-size: 15.5px;
+    padding: 8px 12px;
+  }
+
+  .faq-question-btn {
+    padding: 22px 0 18px;
+    gap: 14px;
+  }
+
+  .faq-question-text {
+    font-size: 17px;
+  }
+
+  .faq-answer-inner p {
+    font-size: 15.5px;
   }
 }
 
+/* Mobile Phones (<= 767px) */
 @media (max-width: 767px) {
   .dantalaya-home-faq-section {
-    padding: 50px 0 60px;
+    padding: 45px 0 55px;
   }
   
   .home-faq-container {
-    padding: 0 18px;
+    padding: 0 16px;
   }
 
   .faq-category-tabs {
-    gap: 22px;
-    margin-bottom: 18px;
+    gap: 8px;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
   }
   
   .faq-tab-btn {
-    font-size: 13.5px;
+    font-size: 14px;
+    padding: 7px 10px;
   }
   
   .faq-question-btn {
-    padding: 20px 0 16px;
+    padding: 18px 0 14px;
+    gap: 12px;
   }
   
   .faq-question-text {
-    font-size: 14.5px;
+    font-size: 15.5px;
+    line-height: 1.4;
+  }
+  
+  .faq-chevron-icon {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+  }
+
+  .faq-chevron-icon svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .faq-answer-inner {
+    padding: 0 0 18px 0;
   }
   
   .faq-answer-inner p {
-    font-size: 13.5px;
+    font-size: 14.5px;
+    line-height: 1.6;
   }
 }
 
+/* ==========================================================================
+   12. DOCTOR / DENTIST SHOWCASE CARDS (ABOUT US & TEAM)
+   Comprehensive desktop, tablet & mobile responsive card styling
+   ========================================================================== */
+.dentists-showcase-section {
+  padding: 60px 0 80px;
+  background-color: #faf8f5;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
 
+.dentists-showcase-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  box-sizing: border-box;
+}
 
+.dentist-showcase-card {
+  display: flex;
+  flex-direction: row;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #f0eae1;
+  box-shadow: 0 10px 30px rgba(94, 64, 54, 0.06);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.dentist-showcase-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(94, 64, 54, 0.12);
+}
+
+.dentist-card-photo-wrapper {
+  flex: 0 0 320px;
+  width: 320px;
+  min-height: 400px;
+  background: #faf8f5;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dentist-card-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.dentist-photo-kavit {
+  object-position: center 15% !important;
+}
+
+.dentist-photo-niyati {
+  object-position: center 30% !important;
+}
+
+.dentist-photo-mukesh {
+  object-position: center 15% !important;
+}
+
+.dentist-showcase-card:hover .dentist-card-photo {
+  transform: scale(1.03);
+}
+
+.dentist-card-content {
+  flex: 1 1 auto;
+  padding: 36px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.dentist-name {
+  font-family: 'Geist', sans-serif !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  color: #5e4036 !important;
+  margin: 0 0 6px 0 !important;
+  line-height: 1.25 !important;
+}
+
+.dentist-role-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #c79730;
+  background: rgba(215, 181, 109, 0.14);
+  padding: 4px 14px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+  letter-spacing: 0.01em;
+}
+
+.dentist-info-group {
+  margin-bottom: 16px;
+}
+
+.dentist-info-group:last-of-type {
+  margin-bottom: 22px;
+}
+
+.dentist-info-heading {
+  font-family: 'Geist', sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: #5e4036 !important;
+  margin: 0 0 6px 0 !important;
+}
+
+.dentist-info-val {
+  font-size: 14.5px !important;
+  line-height: 1.55 !important;
+  color: #6e6460 !important;
+  margin: 0 !important;
+}
+
+.dentist-spec-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.dentist-spec-list li {
+  position: relative !important;
+  padding-left: 20px !important;
+  font-size: 14.5px !important;
+  line-height: 1.55 !important;
+  color: #6e6460 !important;
+  margin-bottom: 4px !important;
+}
+
+.dentist-spec-list li::before {
+  content: '✓' !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  color: #c79730 !important;
+  font-weight: bold !important;
+}
+
+.dentist-social-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+  align-items: center;
+}
+
+.dentist-social-row a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #faf8f5;
+  border: 1px solid #f0eae1;
+  color: #5e4036;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.dentist-social-row a:hover {
+  background: #5e4036;
+  color: #ffffff;
+  border-color: #5e4036;
+  transform: translateY(-2px);
+}
+
+.dentist-watermark-number {
+  position: absolute;
+  right: 24px;
+  bottom: 10px;
+  font-size: 100px;
+  font-weight: 900;
+  color: rgba(94, 64, 54, 0.04);
+  line-height: 1;
+  pointer-events: none;
+  font-family: 'Geist', sans-serif;
+  z-index: 1;
+}
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .dentist-card-photo-wrapper {
+    flex: 0 0 280px;
+    width: 280px;
+    min-height: 360px;
+  }
+  
+  .dentist-card-content {
+    padding: 28px 30px;
+  }
+  
+  .dentist-name {
+    font-size: 24px !important;
+  }
+
+  .dentist-photo-kavit {
+    object-position: center 15% !important;
+  }
+
+  .dentist-photo-niyati {
+    object-position: center 30% !important;
+  }
+
+  .dentist-photo-mukesh {
+    object-position: center 15% !important;
+  }
+}
+
+/* Mobile Phones (<= 767px) */
+@media (max-width: 767px) {
+  .dentists-showcase-section {
+    padding: 35px 0 50px;
+  }
+
+  .dentists-showcase-container {
+    padding: 0 14px;
+    gap: 26px;
+  }
+
+  .dentist-showcase-card {
+    flex-direction: column !important;
+    border-radius: 16px;
+  }
+
+  .dentist-card-photo-wrapper {
+    flex: none !important;
+    width: 100% !important;
+    height: 360px !important;
+    min-height: 360px !important;
+    max-height: 400px !important;
+    background: #f5efe8;
+  }
+
+  .dentist-card-photo {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .dentist-photo-kavit {
+    object-position: center 15% !important;
+  }
+
+  /* Dr Niyati headshot is vertically centered in original photo: anchor to upper-middle (28%) so hair and chin are both visible */
+  .dentist-photo-niyati {
+    object-position: center 28% !important;
+  }
+
+  /* Dr Mukesh headshot is centered with forehead & smile: anchor to 12% so full forehead & smile are visible */
+  .dentist-photo-mukesh {
+    object-position: center 12% !important;
+  }
+
+  .dentist-card-content {
+    padding: 24px 18px !important;
+    width: 100% !important;
+  }
+
+  .dentist-name {
+    font-size: 22px !important;
+    margin-bottom: 6px !important;
+    line-height: 1.25 !important;
+  }
+
+  .dentist-role-badge {
+    font-size: 13.5px;
+    padding: 4px 12px;
+    margin-bottom: 16px;
+  }
+
+  .dentist-info-group {
+    margin-bottom: 14px;
+  }
+
+  .dentist-info-heading {
+    font-size: 13.5px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .dentist-info-val,
+  .dentist-spec-list li {
+    font-size: 13.5px !important;
+    line-height: 1.5 !important;
+  }
+
+  .dentist-watermark-number {
+    display: none !important;
+  }
+
+  /* Clear sticky bottom bar for floating scroll-to-top button */
+  #wpfront-scroll-top-container {
+    bottom: 82px !important;
+    right: 14px !important;
+  }
+}
 
