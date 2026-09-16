@@ -177,15 +177,530 @@
     document.body.appendChild(bar);
   }
 
+  function initHeroSlider() {
+    const slider = document.getElementById('heroSlider');
+    if (!slider) return;
+
+    const slides = slider.querySelectorAll('.hero-slide');
+    const prevBtn = slider.querySelector('.hero-slider-prev');
+    const nextBtn = slider.querySelector('.hero-slider-next');
+
+    if (!slides || slides.length === 0) return;
+
+    let currentIndex = 0;
+    let autoplayTimer = null;
+    const AUTOPLAY_INTERVAL = 5000;
+
+    function goToSlide(index) {
+      if (index < 0) {
+        index = slides.length - 1;
+      } else if (index >= slides.length) {
+        index = 0;
+      }
+
+      currentIndex = index;
+
+      slides.forEach((slide, i) => {
+        if (i === currentIndex) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+    }
+
+    function nextSlide() {
+      goToSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentIndex - 1);
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+      autoplayTimer = setInterval(nextSlide, AUTOPLAY_INTERVAL);
+    }
+
+    function stopAutoplay() {
+      if (autoplayTimer) {
+        clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function () {
+        nextSlide();
+        startAutoplay();
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function () {
+        prevSlide();
+        startAutoplay();
+      });
+    }
+
+    // Pause on hover
+    slider.addEventListener('mouseenter', stopAutoplay);
+    slider.addEventListener('mouseleave', startAutoplay);
+
+    // Touch Swipe Support for Mobile/Tablet
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let touchStartY = 0;
+    let touchEndY = 0;
+
+    slider.addEventListener('touchstart', function (e) {
+      stopAutoplay();
+      touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+
+    slider.addEventListener('touchend', function (e) {
+      touchEndX = e.changedTouches[0].screenX;
+      touchEndY = e.changedTouches[0].screenY;
+      handleSwipe();
+      startAutoplay();
+    }, { passive: true });
+
+    function handleSwipe() {
+      const deltaX = touchEndX - touchStartX;
+      const deltaY = touchEndY - touchStartY;
+      // Ensure horizontal swipe is dominant and passes threshold
+      if (Math.abs(deltaX) > 40 && Math.abs(deltaX) > Math.abs(deltaY)) {
+        if (deltaX < 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+      }
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') {
+        const rect = slider.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          prevSlide();
+          startAutoplay();
+        }
+      } else if (e.key === 'ArrowRight') {
+        const rect = slider.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          nextSlide();
+          startAutoplay();
+        }
+      }
+    });
+
+    // Start on initial slide
+    goToSlide(0);
+    startAutoplay();
+  }
+
+  function initStatsCounters() {
+    const statNumbers = document.querySelectorAll('.dantalaya-stat-number[data-target]');
+    if (!statNumbers || statNumbers.length === 0) return;
+
+    let animated = false;
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !animated) {
+          animated = true;
+          obs.disconnect();
+
+          statNumbers.forEach(numEl => {
+            const target = parseInt(numEl.getAttribute('data-target'), 10);
+            if (isNaN(target)) return;
+
+            const duration = 1800;
+            const startTime = performance.now();
+
+            function updateCount(currentTime) {
+              const elapsed = currentTime - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              const easeProgress = 1 - (1 - progress) * (1 - progress);
+              const currentVal = Math.floor(easeProgress * target);
+
+              numEl.textContent = currentVal.toLocaleString('en-US');
+
+              if (progress < 1) {
+                requestAnimationFrame(updateCount);
+              } else {
+                numEl.textContent = target.toLocaleString('en-US');
+              }
+            }
+
+            requestAnimationFrame(updateCount);
+          });
+        }
+      });
+    }, { threshold: 0.2 });
+
+    const statsSection = document.querySelector('.dantalaya-stats-section');
+    if (statsSection) {
+      observer.observe(statsSection);
+    }
+  }
+
+  function initServicesSlider() {
+    const wrapper = document.getElementById('servicesSliderWrapper');
+    const track = document.getElementById('servicesSliderTrack');
+
+    if (!wrapper || !track) return;
+    if (wrapper.dataset.sliderInitialized === 'true') return;
+    wrapper.dataset.sliderInitialized = 'true';
+
+    const originalCards = Array.from(track.children);
+    const count = originalCards.length;
+    if (count === 0) return;
+
+    // Clone 7 elements at each end for continuous smooth infinite looping
+    const cloneCount = 7;
+    for (let i = count - cloneCount; i < count; i++) {
+      const clone = originalCards[i].cloneNode(true);
+      clone.classList.add('is-clone');
+      clone.setAttribute('aria-hidden', 'true');
+      track.insertBefore(clone, track.firstChild);
+    }
+    for (let i = 0; i < cloneCount; i++) {
+      const clone = originalCards[i].cloneNode(true);
+      clone.classList.add('is-clone');
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+    }
+
+    const allCards = Array.from(track.children);
+    let currentIndex = cloneCount;
+    let isTransitioning = false;
+    let autoplayTimer = null;
+    const AUTOPLAY_INTERVAL = 3800;
+
+    function getStepWidth() {
+      if (allCards.length === 0) return 0;
+      const cardRect = allCards[0].getBoundingClientRect();
+      const style = window.getComputedStyle(track);
+      const gap = parseFloat(style.gap || style.columnGap) || 24;
+      return cardRect.width + gap;
+    }
+
+    function setPosition(animate = true) {
+      if (!animate) {
+        track.classList.add('no-transition');
+      } else {
+        track.classList.remove('no-transition');
+      }
+      const step = getStepWidth();
+      track.style.transform = `translate3d(-${currentIndex * step}px, 0, 0)`;
+    }
+
+    function goToIndex(index, animate = true) {
+      isTransitioning = animate;
+      currentIndex = index;
+      setPosition(animate);
+    }
+
+    function slideNext() {
+      if (isDragging) return;
+      goToIndex(currentIndex + 1, true);
+    }
+
+    function slidePrev() {
+      if (isDragging) return;
+      goToIndex(currentIndex - 1, true);
+    }
+
+    track.addEventListener('transitionend', function (e) {
+      if (e.target !== track) return;
+      isTransitioning = false;
+
+      let wrapped = false;
+      while (currentIndex >= count + cloneCount) {
+        currentIndex -= count;
+        wrapped = true;
+      }
+      while (currentIndex < cloneCount) {
+        currentIndex += count;
+        wrapped = true;
+      }
+
+      if (wrapped) {
+        track.classList.add('no-transition');
+        const step = getStepWidth();
+        track.style.transform = `translate3d(-${currentIndex * step}px, 0, 0)`;
+        track.offsetHeight; // Force reflow
+        setTimeout(() => {
+          track.classList.remove('no-transition');
+        }, 20);
+      }
+    });
+
+    function startAutoplay() {
+      stopAutoplay();
+      autoplayTimer = setInterval(slideNext, AUTOPLAY_INTERVAL);
+    }
+
+    function stopAutoplay() {
+      if (autoplayTimer) {
+        clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+    }
+
+    // Touch & Mouse Drag Implementation
+    let isDragging = false;
+    let startX = 0;
+    let startY = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    let touchStartTime = 0;
+    let isHorizontalSwipe = false;
+    let hasMoved = false;
+
+    function getPositionX(e) {
+      return e.touches && e.touches.length ? e.touches[0].clientX : (e.clientX !== undefined ? e.clientX : e.pageX);
+    }
+
+    function getPositionY(e) {
+      return e.touches && e.touches.length ? e.touches[0].clientY : (e.clientY !== undefined ? e.clientY : e.pageY);
+    }
+
+    function getCurrentTranslateX() {
+      const style = window.getComputedStyle(track);
+      const matrix = style.transform || style.webkitTransform;
+      if (matrix && matrix !== 'none') {
+        const matrixValues = matrix.match(/matrix.*\((.+)\)/);
+        if (matrixValues && matrixValues[1]) {
+          const values = matrixValues[1].split(', ');
+          if (values.length === 6) {
+            return parseFloat(values[4]);
+          } else if (values.length === 16) {
+            return parseFloat(values[12]);
+          }
+        }
+      }
+      const step = getStepWidth();
+      return -currentIndex * step;
+    }
+
+    function dragStart(e) {
+      stopAutoplay();
+      isDragging = true;
+      hasMoved = false;
+      isHorizontalSwipe = false;
+      touchStartTime = Date.now();
+
+      startX = getPositionX(e);
+      startY = getPositionY(e);
+
+      // Read current visual position directly from transform matrix
+      prevTranslate = getCurrentTranslateX();
+      currentTranslate = prevTranslate;
+      isTransitioning = false;
+
+      track.classList.add('no-transition');
+      track.style.transform = `translate3d(${currentTranslate}px, 0, 0)`;
+    }
+
+    function dragMove(e) {
+      if (!isDragging) return;
+
+      const currentX = getPositionX(e);
+      const currentY = getPositionY(e);
+      const diffX = currentX - startX;
+      const diffY = currentY - startY;
+
+      if (!hasMoved) {
+        if (Math.abs(diffX) > 6 || Math.abs(diffY) > 6) {
+          hasMoved = true;
+          isHorizontalSwipe = Math.abs(diffX) >= Math.abs(diffY);
+        }
+      }
+
+      if (isHorizontalSwipe) {
+        if (e.cancelable && e.type.startsWith('touch')) {
+          e.preventDefault();
+        }
+        currentTranslate = prevTranslate + diffX;
+        track.style.transform = `translate3d(${currentTranslate}px, 0, 0)`;
+      }
+    }
+
+    function dragEnd(e) {
+      if (!isDragging) return;
+      isDragging = false;
+      track.classList.remove('no-transition');
+
+      const step = getStepWidth();
+      if (step > 0 && hasMoved && isHorizontalSwipe) {
+        const movedBy = currentTranslate - prevTranslate;
+        const timeElapsed = Date.now() - touchStartTime;
+        const isQuickSwipe = timeElapsed < 320 && Math.abs(movedBy) > 25;
+
+        let targetIndex;
+        if (isQuickSwipe) {
+          if (movedBy < 0) {
+            targetIndex = Math.max(currentIndex + 1, Math.round(-currentTranslate / step));
+          } else {
+            targetIndex = Math.min(currentIndex - 1, Math.round(-currentTranslate / step));
+          }
+        } else {
+          // Snap directly to wherever user dragged closest
+          targetIndex = Math.round(-currentTranslate / step);
+        }
+
+        goToIndex(targetIndex, true);
+      } else {
+        goToIndex(currentIndex, true);
+      }
+
+      startAutoplay();
+    }
+
+    // Touch events
+    wrapper.addEventListener('touchstart', dragStart, { passive: true });
+    wrapper.addEventListener('touchmove', dragMove, { passive: false });
+    wrapper.addEventListener('touchend', dragEnd, { passive: true });
+    wrapper.addEventListener('touchcancel', dragEnd, { passive: true });
+
+    // Mouse events
+    wrapper.addEventListener('mousedown', dragStart);
+    window.addEventListener('mousemove', dragMove);
+    window.addEventListener('mouseup', dragEnd);
+
+    // Prevent clicking links when dragging
+    wrapper.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function (e) {
+        if (hasMoved && isHorizontalSwipe) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      });
+    });
+
+    // Window resize handler
+    let resizeTimer = null;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () {
+        setPosition(false);
+      }, 80);
+    });
+
+    // Initial setup
+    setTimeout(function () {
+      setPosition(false);
+      startAutoplay();
+    }, 60);
+  }
+
+  function initStickyHeaderScroll() {
+    const masthead = document.querySelector('header#masthead') || document.querySelector('.elementor-224');
+    const headerSection = document.querySelector('.elementor-224 .elementor-element.elementor-element-7ecc71f2');
+
+    function handleScroll() {
+      const isScrolled = window.scrollY > 30;
+      if (isScrolled) {
+        document.body.classList.add('is-scrolled');
+        if (masthead) masthead.classList.add('header-scrolled');
+        if (headerSection) headerSection.classList.add('header-scrolled');
+      } else {
+        document.body.classList.remove('is-scrolled');
+        if (masthead) masthead.classList.remove('header-scrolled');
+        if (headerSection) headerSection.classList.remove('header-scrolled');
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+  }
+
+  function initHomeFAQ() {
+    const faqSection = document.getElementById('faq-section');
+    if (!faqSection) return;
+
+    // Tab Switching
+    const tabButtons = faqSection.querySelectorAll('.faq-tab-btn');
+    const tabPanes = faqSection.querySelectorAll('.faq-tab-pane');
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', function () {
+        const targetId = this.getAttribute('data-faq-target');
+        
+        tabButtons.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        tabPanes.forEach(p => p.classList.remove('active'));
+
+        this.classList.add('active');
+        this.setAttribute('aria-selected', 'true');
+        
+        const targetPane = document.getElementById(targetId);
+        if (targetPane) {
+          targetPane.classList.add('active');
+        }
+      });
+    });
+
+    // Accordion Toggle
+    const questionButtons = faqSection.querySelectorAll('.faq-question-btn');
+    questionButtons.forEach(btn => {
+      btn.addEventListener('click', function () {
+        const item = this.closest('.faq-item');
+        const collapse = item.querySelector('.faq-answer-collapse');
+        const isOpen = item.classList.contains('active');
+
+        // Optional: close other open items in the same list
+        const parentList = item.closest('.faq-accordion-list');
+        if (parentList) {
+          parentList.querySelectorAll('.faq-item.active').forEach(openItem => {
+            if (openItem !== item) {
+              openItem.classList.remove('active');
+              openItem.querySelector('.faq-question-btn').setAttribute('aria-expanded', 'false');
+              const c = openItem.querySelector('.faq-answer-collapse');
+              if (c) c.style.maxHeight = null;
+            }
+          });
+        }
+
+        if (isOpen) {
+          item.classList.remove('active');
+          this.setAttribute('aria-expanded', 'false');
+          collapse.style.maxHeight = null;
+        } else {
+          item.classList.add('active');
+          this.setAttribute('aria-expanded', 'true');
+          collapse.style.maxHeight = collapse.scrollHeight + 'px';
+        }
+      });
+    });
+  }
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () {
       initResponsiveNav();
+      initStickyHeaderScroll();
       initFooterAccordion();
       injectMobileQuickBar();
+      initHeroSlider();
+      initStatsCounters();
+      initServicesSlider();
+      initHomeFAQ();
     });
   } else {
     initResponsiveNav();
+    initStickyHeaderScroll();
     initFooterAccordion();
     injectMobileQuickBar();
+    initHeroSlider();
+    initStatsCounters();
+    initServicesSlider();
+    initHomeFAQ();
   }
 })();
+
