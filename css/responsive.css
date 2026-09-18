@@ -5082,3 +5082,294 @@ footer#colophon,
   }
 }
 
+/* ==========================================================================
+   TREATMENTS PAGE - SERVICES SECTION REDESIGN & BRAND THEME
+   Palette: #5E4036 (Espresso Brown), #D7B56D (Warm Gold), #C79730 (Golden Amber)
+   ========================================================================== */
+
+/* Main Treatments Grid Container */
+.elementor-4333 .elementor-element-5ef8ad8c {
+  background-color: var(--color-bg-secondary, #faf8f5) !important;
+  background-image: radial-gradient(#d7b56d15 1px, transparent 1px) !important;
+  background-size: 24px 24px !important;
+  padding: 60px 0 100px 0 !important;
+}
+
+/* Treatments Main Section Title */
+.elementor-4333 .elementor-element-6f779a10 .elementor-heading-title {
+  color: var(--dantalaya-brown, #5e4036) !important;
+  font-family: var(--font-heading, 'Geist', sans-serif) !important;
+  font-size: 38px !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.02em !important;
+  text-align: center !important;
+  margin-bottom: 25px !important;
+  position: relative !important;
+}
+
+.elementor-4333 .elementor-element-6f779a10 .elementor-heading-title::after {
+  content: '' !important;
+  display: block !important;
+  width: 60px !important;
+  height: 3px !important;
+  background: linear-gradient(90deg, #d7b56d, #c79730) !important;
+  border-radius: 99px !important;
+  margin: 14px auto 0 auto !important;
+}
+
+/* Inner Sections Row Spacing */
+.elementor-4333 .elementor-element-2036011f,
+.elementor-4333 .elementor-element-94da7a2,
+.elementor-4333 .elementor-element-0dbb113,
+.elementor-4333 .elementor-element-6d6fbe6,
+.elementor-4333 .elementor-element-372d0ef {
+  margin-top: 24px !important;
+  margin-bottom: 0px !important;
+}
+
+/* Standardized Inner Column Spacing & Equal Height */
+.elementor-4333 .elementor-element-5ef8ad8c .elementor-inner-column {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.elementor-4333 .elementor-element-5ef8ad8c .elementor-inner-column > .elementor-element-populated {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 1 auto !important;
+  height: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.elementor-4333 .elementor-element-5ef8ad8c .elementor-widget-jkit_icon_box,
+.elementor-4333 .elementor-element-5ef8ad8c .elementor-widget-container,
+.elementor-4333 .elementor-element-5ef8ad8c .jeg-elementor-kit.jkit-icon-box {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 1 auto !important;
+}
+
+/* Redesigned Card Box Wrapper */
+.elementor-4333 .elementor-element-5ef8ad8c .jeg-elementor-kit.jkit-icon-box .jkit-icon-box-wrapper {
+  background: #ffffff !important;
+  border: 1px solid var(--color-border, #f0eae1) !important;
+  border-radius: 20px !important;
+  padding: 32px 28px !important;
+  box-shadow: 0 4px 20px rgba(94, 64, 54, 0.05) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  height: 100% !important;
+  min-height: 240px !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  margin: 8px !important;
+}
+
+.elementor-4333 .elementor-element-5ef8ad8c .jeg-elementor-kit.jkit-icon-box .jkit-icon-box-wrapper::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 4px !important;
+  background: linear-gradient(90deg, #d7b56d 0%, #c79730 100%) !important;
+  opacity: 0 !important;
+  transition: opacity 0.35s ease !important;
+}
+
+/* Card Hover Elevation */
+.elementor-4333 .elementor-element-5ef8ad8c .jeg-elementor-kit.jkit-icon-box .jkit-icon-box-wrapper:hover {
+  background: #ffffff !important;
+  border-color: rgba(215, 181, 109, 0.5) !important;
+  box-shadow: 0 16px 36px rgba(94, 64, 54, 0.12) !important;
+  transform: translateY(-6px) !important;
+}
+
+.elementor-4333 .elementor-element-5ef8ad8c .jeg-elementor-kit.jkit-icon-box .jkit-icon-box-wrapper:hover::before {
+  opacity: 1 !important;
+}
+
+/* Icon Box Header & Dental Icon Badge */
+.elementor-4333 .elementor-element-5ef8ad8c .jeg-elementor-kit.jkit-icon-box .icon-box.icon-box-header {
+  margin-bottom: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.elementor-4333 .elementor-element-5ef8ad8c .jeg-elementor-kit.jkit-icon-box .icon-box > .icon {
+  width: 58px !important;
+  height: 58px !important;
+  min-width: 58px !important;
+  border-radius: 14px !important;
+  background: linear-gradient(135deg, rgba(215, 181, 109, 0.18) 0%, rgba(199, 151, 48, 0.08) 100%) !important;
+  border: 1px solid rgba(215, 181, 109, 0.35) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 10px !important;
+  transition: transform 0.35s ease, background 0.35s ease, box-shadow 0.35s ease !important;
+}
+
+.elementor-4333 .elementor-element-5ef8ad8c .jeg-elementor-kit.jkit-icon-box .jkit-icon-box-wrapper:hover .icon-box > .icon {
+  transform: scale(1.08) rotate(3deg) !important;
+  background: linear-gradient(135deg, #d7b56d 0%, #c79730 100%) !important;
+  box-shadow: 0 6px 16px rgba(199, 151, 48, 0.3) !important;
+}
+
+.elementor-4333 .elementor-element-5ef8ad8c .jeg-elementor-kit.jkit-icon-box .icon-box > .icon img {
+  width: 32px !important;
+  height: 32px !important;
+  object-fit: contain !important;
+  filter: brightness(0) saturate(100%) invert(26%) sepia(21%) saturate(967%) hue-rotate(334deg) brightness(94%) contrast(89%) !important; /* Espresso Brown tint */
+  transition: filter 0.35s ease !important;
+}
+
+.elementor-4333 .elementor-element-5ef8ad8c .jeg-elementor-kit.jkit-icon-box .jkit-icon-box-wrapper:hover .icon-box > .icon img {
+  filter: brightness(0) invert(1) !important; /* Crisp white icon on hover */
+}
+
+/* Card Body Content */
+.elementor-4333 .elementor-element-5ef8ad8c .jeg-elementor-kit.jkit-icon-box .icon-box.icon-box-body {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 1 auto !important;
+}
+
+/* Card Title */
+.elementor-4333 .elementor-element-5ef8ad8c .jeg-elementor-kit.jkit-icon-box .title {
+  color: var(--dantalaya-brown, #5e4036) !important;
+  font-family: var(--font-heading, 'Geist', sans-serif) !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+  letter-spacing: -0.01em !important;
+  margin: 0 0 10px 0 !important;
+  padding: 0 !important;
+  transition: color 0.3s ease !important;
+}
+
+.elementor-4333 .elementor-element-5ef8ad8c .jeg-elementor-kit.jkit-icon-box .jkit-icon-box-wrapper:hover .title {
+  color: var(--dantalaya-amber, #c79730) !important;
+}
+
+/* Card Description */
+.elementor-4333 .elementor-element-5ef8ad8c .jeg-elementor-kit.jkit-icon-box .icon-box.icon-box-body .icon-box-description {
+  color: var(--color-text-secondary, #6e6460) !important;
+  font-family: var(--font-body, 'Inter', sans-serif) !important;
+  font-size: 14.5px !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+  margin: 0 0 20px 0 !important;
+  flex-grow: 1 !important;
+}
+
+/* "Read More" Button & Arrow */
+.elementor-4333 .elementor-element-5ef8ad8c .jeg-elementor-kit.jkit-icon-box .icon-box-button {
+  margin-top: auto !important;
+  padding-top: 12px !important;
+  border-top: 1px dashed rgba(94, 64, 54, 0.1) !important;
+}
+
+.elementor-4333 .elementor-element-5ef8ad8c .jeg-elementor-kit.jkit-icon-box .icon-box-button a.icon-box-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  color: var(--dantalaya-amber, #c79730) !important;
+  font-family: var(--font-body, 'Inter', sans-serif) !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  text-decoration: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: gap 0.25s ease, color 0.25s ease !important;
+}
+
+.elementor-4333 .elementor-element-5ef8ad8c .jeg-elementor-kit.jkit-icon-box .icon-box-button a.icon-box-link i {
+  color: var(--dantalaya-amber, #c79730) !important;
+  font-size: 12px !important;
+  transition: transform 0.25s ease, color 0.25s ease !important;
+}
+
+.elementor-4333 .elementor-element-5ef8ad8c .jeg-elementor-kit.jkit-icon-box .jkit-icon-box-wrapper:hover .icon-box-button a.icon-box-link {
+  color: var(--dantalaya-brown, #5e4036) !important;
+  gap: 12px !important;
+}
+
+.elementor-4333 .elementor-element-5ef8ad8c .jeg-elementor-kit.jkit-icon-box .jkit-icon-box-wrapper:hover .icon-box-button a.icon-box-link i {
+  color: var(--dantalaya-brown, #5e4036) !important;
+  transform: translateX(4px) !important;
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT FOR TREATMENTS GRID
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .elementor-4333 .elementor-element-5ef8ad8c {
+    padding: 40px 16px 70px 16px !important;
+  }
+
+  .elementor-4333 .elementor-element-6f779a10 .elementor-heading-title {
+    font-size: 30px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .elementor-4333 .elementor-element-2036011f > .elementor-container,
+  .elementor-4333 .elementor-element-94da7a2 > .elementor-container,
+  .elementor-4333 .elementor-element-0dbb113 > .elementor-container,
+  .elementor-4333 .elementor-element-6d6fbe6 > .elementor-container,
+  .elementor-4333 .elementor-element-372d0ef > .elementor-container {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 16px !important;
+  }
+
+  .elementor-4333 .elementor-element-5ef8ad8c .elementor-inner-column {
+    width: calc(50% - 8px) !important;
+    flex: 0 0 calc(50% - 8px) !important;
+    max-width: calc(50% - 8px) !important;
+    margin: 0 !important;
+  }
+
+  .elementor-4333 .elementor-element-5ef8ad8c .jeg-elementor-kit.jkit-icon-box .jkit-icon-box-wrapper {
+    margin: 0 !important;
+    padding: 26px 22px !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .elementor-4333 .elementor-element-5ef8ad8c {
+    padding: 32px 12px 60px 12px !important;
+  }
+
+  .elementor-4333 .elementor-element-6f779a10 .elementor-heading-title {
+    font-size: 25px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .elementor-4333 .elementor-element-5ef8ad8c .elementor-inner-column {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  .elementor-4333 .elementor-element-5ef8ad8c .jeg-elementor-kit.jkit-icon-box .jkit-icon-box-wrapper {
+    padding: 22px 18px !important;
+    min-height: auto !important;
+  }
+
+  .elementor-4333 .elementor-element-5ef8ad8c .jeg-elementor-kit.jkit-icon-box .title {
+    font-size: 18px !important;
+  }
+
+  .elementor-4333 .elementor-element-5ef8ad8c .jeg-elementor-kit.jkit-icon-box .icon-box.icon-box-body .icon-box-description {
+    font-size: 13.5px !important;
+  }
+}
+
+
